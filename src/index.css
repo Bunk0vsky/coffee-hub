@@ -82,7 +82,7 @@ body {
 
 .list {
   background-color: #fbf0db;
-  padding: 2.8rem 2.2rem;
+  padding: 2.8rem 4.2rem;
   border: none;
   border-radius: 20px;
   list-style: none;
@@ -100,9 +100,19 @@ body {
   font-size: 2rem;
 }
 
+.coffee-orders {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  border: 1px solid #fbf0db;
+  border-radius: 20px;
+  text-align: center;
+}
+
 .details-form {
   background-color: #fbf0db;
-  padding: 2.8rem 2.2rem;
+  padding: 2.8rem 4.2rem;
   border: none;
   border-radius: 20px;
   list-style: none;
@@ -173,17 +183,6 @@ button.sizes:hover {
   flex-direction: row;
   margin: 0 2rem;
 }
-.counter Button {
-}
-
-.coffee-orders {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4rem;
-  border: 1px solid #fbf0db;
-  border-radius: 20px;
-}
 
 .summary {
   background-color: #fbf0db;
@@ -213,13 +212,48 @@ button.sizes:hover {
   justify-content: center;
 }
 .summary-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   border-top: #b8b5b5 solid 1px;
+  padding-top: 2rem;
 }
 
 .summary-bottom p {
   display: flex;
   justify-content: end;
   padding: 2.8rem 2.2rem;
+}
+
+.summary-coupon {
+  display: flex;
+
+  border: 1px solid #fbf0db;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.summary-coupon-input {
+  border-radius: 20px;
+  border: none;
+  padding: 0 8px;
+}
+
+.summary-coupon-info {
+  display: flex;
+  align-items: center;
+  background-color: #f0dcb6;
+  width: auto;
+  height: 60px;
+  border: none;
+  border-radius: 20px;
+  padding: 2px 8px;
+}
+
+.summary-total {
+  display: flex;
+  align-items: end;
 }
 
 .order-item {
@@ -233,4 +267,20 @@ button.sizes:hover {
   display: flex;
   width: 16.7%;
   justify-content: center;
+}
+
+.delete-item {
+  background-color: #faeacb;
+  color: #333;
+  /* padding: 0.8rem 1.2rem; */
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  width: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-item:hover {
+  background-color: rgb(196, 141, 69);
 }
