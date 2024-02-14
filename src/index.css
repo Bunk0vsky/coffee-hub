@@ -222,7 +222,7 @@ button.sizes:hover {
 
 .summary-bottom p {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 2.8rem 2.2rem;
 }
 
@@ -253,7 +253,7 @@ button.sizes:hover {
 
 .summary-total {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .order-item {
