@@ -12,7 +12,6 @@ export function Order({
   onSetOrders,
 }) {
   const ref = useRef();
-  // console.log(ref?.current?.id);
   function checkNumber(val) {
     if (val > 0) {
       return `$${val}`;

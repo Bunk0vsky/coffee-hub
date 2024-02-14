@@ -6,7 +6,6 @@ export function Details({
   quantity,
   setQuantity,
   size,
-  price,
   setSize,
 }) {
   function handleQuantity(parametr) {

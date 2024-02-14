@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CoffeeList } from "./components/CoffeeList";
 import { Details } from "./components/Details";
 import { Summary } from "./components/Summary";
+import DocumentTitle from "react-document-title";
 
 const coffeeMenu = [
   {
@@ -72,10 +73,6 @@ export default function App() {
     setSelectedCoffee((cur) => (cur?.id === coffee.id ? null : coffee));
   }
 
-  // function handleDeleteCoffee(id) {
-  //   setOrders((orders) => orders.filter((order) => order.id !== id));
-  // }
-
   function handleOrders(orders) {
     setOrders((order) => [...order, orders]);
 
@@ -84,42 +81,43 @@ export default function App() {
   }
 
   return (
-    <div className="app">
-      <div className="logo">
-        <img src="Coffee-hub3.svg" alt="logo" height="250px" />
-      </div>
+    <DocumentTitle title="CoffeeHub - Place to enjoy coffee">
+      <div className="app">
+        <div className="logo">
+          <img src="Coffee-hub3.svg" alt="logo" height="250px" />
+        </div>
 
-      <div className="menu grid-container">
-        <CoffeeList
-          data={coffeeMenu}
-          selectedCoffee={selectedCoffee}
-          onSelection={handleSelection}
-        >
-          It's Great{" "}
-          <span style={{ color: "rgb(138, 80, 5)" }}>Day For Coffee</span>
-        </CoffeeList>
-        {selectedCoffee && (
-          <Details
+        <div className="menu grid-container">
+          <CoffeeList
+            data={coffeeMenu}
             selectedCoffee={selectedCoffee}
-            onHandleOrders={handleOrders}
-            quantity={quantity}
-            setQuantity={setQuantity}
-            size={size}
-            setSize={setSize}
-          />
-        )}
+            onSelection={handleSelection}
+          >
+            It's Great{" "}
+            <span style={{ color: "rgb(138, 80, 5)" }}>Day For Coffee</span>
+          </CoffeeList>
+          {selectedCoffee && (
+            <Details
+              selectedCoffee={selectedCoffee}
+              onHandleOrders={handleOrders}
+              quantity={quantity}
+              setQuantity={setQuantity}
+              size={size}
+              setSize={setSize}
+            />
+          )}
 
-        {showAddSummary && orders.length > 0 && (
-          <Summary
-            orders={orders}
-            onShowAddSummary={setShowAddSummary}
-            onSetOrders={setOrders}
-            onSetSelectionCoffee={setSelectedCoffee}
-            onHandleOrders={handleOrders}
-            // onHandleDeleteCoffee={handleDeleteCoffee}
-          />
-        )}
+          {showAddSummary && orders.length > 0 && (
+            <Summary
+              orders={orders}
+              onShowAddSummary={setShowAddSummary}
+              onSetOrders={setOrders}
+              onSetSelectionCoffee={setSelectedCoffee}
+              onHandleOrders={handleOrders}
+            />
+          )}
+        </div>
       </div>
-    </div>
+    </DocumentTitle>
   );
 }
